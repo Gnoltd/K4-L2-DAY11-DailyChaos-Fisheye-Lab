@@ -1,0 +1,19 @@
+{
+  "members": [
+    "hoang",
+    "long",
+    "tung"
+  ],
+  "assignments": {
+    "hoang": "B4-edge",
+    "long": "B1-center",
+    "tung": "B2-mid"
+  },
+  "self": "tung",
+  "slice": "B2-mid",
+  "degrade": [],
+  "current_slice": "C0",
+  "support_prefill": false,
+  "support_slice": "",
+  "prefill_box_ids": []
+}

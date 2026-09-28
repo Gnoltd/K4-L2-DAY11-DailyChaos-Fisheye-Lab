@@ -1,9 +1,9 @@
 camera_id,slice_type,frames,risk,rationale
-front,normal,,TODO,TODO
-front,hard,,TODO,TODO
-rear,normal,,TODO,TODO
-rear,hard,,TODO,TODO
-left,normal,,TODO,TODO
-left,hard,,TODO,TODO
-right,normal,,TODO,TODO
-right,hard,,TODO,TODO
+front,normal,25,baseline coverage,Stratified baseline from ordinary visibility and traffic conditions; confirm against the 50000-frame inventory before sampling.
+front,hard,25,high,Target occlusion truncation small objects glare and near-seam views; select by observed difficulty rather than presumed prevalence.
+rear,normal,25,baseline coverage,Stratified baseline from ordinary visibility and traffic conditions; confirm against the 50000-frame inventory before sampling.
+rear,hard,25,high,Target occlusion truncation small objects glare and near-seam views; select by observed difficulty rather than presumed prevalence.
+left,normal,25,baseline coverage,Stratified baseline from ordinary visibility and traffic conditions; confirm against the 50000-frame inventory before sampling.
+left,hard,25,high,Target occlusion truncation small objects glare and near-seam views; select by observed difficulty rather than presumed prevalence.
+right,normal,25,baseline coverage,Stratified baseline from ordinary visibility and traffic conditions; confirm against the 50000-frame inventory before sampling.
+right,hard,25,high,Target occlusion truncation small objects glare and near-seam views; select by observed difficulty rather than presumed prevalence.

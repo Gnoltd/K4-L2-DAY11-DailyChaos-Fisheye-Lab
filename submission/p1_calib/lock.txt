@@ -1,0 +1,9 @@
+round: calib
+slice: C0
+sha256: 3bd0bf0588d76edc51cd7ec6d74b9b50d53793f02d375801905a1fb5909a9a75
+code: 3BD0-BF05
+locked_at: 2026-09-28T17:28:42+07:00
+shapes: box=9, polygon=2
+prefill_kept: 0
+prefill_edited: 0
+new: 9
