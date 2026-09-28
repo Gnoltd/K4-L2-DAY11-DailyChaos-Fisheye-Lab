@@ -85,6 +85,16 @@
       "sha256": "413e23c0e0ba58881e1a9318ccfda0f9c54f016f6a8ef77c8aa15e556806354f"
     },
     {
+      "file": "r2_qa/qa_review.md",
+      "lines": 16,
+      "sha256": "4b096a8d2c04bb76107bdf5dd25125546418e7908eb3f5ab9306b4f42d656833"
+    },
+    {
+      "file": "r2_qa/qa_overlay.html",
+      "lines": 58,
+      "sha256": "2976853d1ecaf45def4c01a0e6d188bd2af4a520adf212f15e3cde0b80fbcadb"
+    },
+    {
       "file": "r3_diag/local_quality.md",
       "lines": 49,
       "sha256": "8f65cdfd9de437885f23045c8462b3e48d4a73bf97ea9aa0dd09fdc045bb712c"
@@ -137,8 +147,8 @@
     },
     {
       "file": "findings.csv",
-      "lines": 36,
-      "sha256": "bf02044c150a308d07b982a7de2ac75382f11aa9fc0d65502cb3baef89c023ea"
+      "lines": 40,
+      "sha256": "d840aa1f42f25da9c0cabaf6d95defde68c2b7bb990e0ea79f6e11f7351a04fc"
     },
     {
       "file": "10_error_card.md",
@@ -181,9 +191,5 @@
       "sha256": "af2a921ce6215e5524765809a66d2fe8fe31cf33c1fa46c95ccc971f285ab55a"
     }
   ],
-  "failed_gates": [
-    "findings cần ≥3 dòng vai r2_qa",
-    "Thiếu file r2_qa/qa_review.md",
-    "Thiếu file r2_qa/qa_overlay.html"
-  ]
+  "failed_gates": []
 }

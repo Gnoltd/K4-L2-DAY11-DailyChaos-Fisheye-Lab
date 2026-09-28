@@ -17,7 +17,7 @@
 | Vai | Họ và tên | MSSV | Tên định danh trong mode | Trách nhiệm | Bằng chứng đóng góp |
 |---|---|---|---|---|---|
 | A · Gán nhãn | Đỗ Thành Long | 2A202602199 | long | Parking/C0/slice, self-QC, lock, rework | `submission/parking/`, `p1_calib/` (lock 1605-E959), `r1_craft/` (lock 8F87-0D1E, selfqc 9 mục), `rework/` (lock2 8F87-0D1E, delta); commit `8d79122`, `9da5adc` |
-| B · QA độc lập | Nguyễn Văn Hoàng | 2A202602176 | hoang | Review trước reference, finding QA, kiểm lại ca sửa | [Chờ: `submission/r2_qa/qa_review.md`, `qa_overlay.html`, ≥3 dòng `r2_qa` trong findings, ảnh bằng chứng, commit] |
+| B · QA độc lập | Nguyễn Văn Hoàng | 2A202602176 | hoang | Review trước reference, finding QA, kiểm lại ca sửa | `submission/r2_qa/qa_review.md` + `qa_overlay.html` (QA mù bản 8F87-0D1E, 3 frame, 5 nhận xét), 4 dòng `r2_qa` trong findings; commit `4c89c63` trên branch `hoang`, tích hợp vào `main` |
 | C · Chẩn đoán & điều phối | Đào Xuân Tùng | 2A202602177 | tung | Báo cáo, phân xử, kế hoạch, tích hợp, check và nộp | [Chờ: kiểm và xác nhận `r3_diag/`, dòng `r3_diag`, `10_error_card.md`, 20/30/40/45/46/50, phân xử QA của B, `check`, commit chốt] |
 
 Bảng này xác định vai của nhóm. Vòng QA tự sinh trong team.json thuộc quy trình nhiều hồ sơ của CLI; nhóm dùng một slice chung và quy trình A → B → C đã nêu trong hướng dẫn.
@@ -28,10 +28,10 @@ Bảng này xác định vai của nhóm. Vòng QA tự sinh trong team.json thu
 |---|---|---|---|---|
 | P0 · Chốt môi trường và vai | C → A, B | `00_setup/mode.json` (slice B1-center), `parking/annotations.xml` (20 parking_line, 2 free_space) | [C/B điền] | Xong phần A. Vai A/B/C chốt muộn, xem mục 4 |
 | P2 · Khóa bản đầu | A → B, C | `r1_craft/annotations.xml`, `lock.txt`, slice B1-center, mã **8F87-0D1E**, commit `8d79122` | [B điền: mã khớp khi chạy `qa`] | Xong |
-| P3 · Chốt QA mù | B → C, A | [`r2_qa/qa_review.md`, findings r2_qa, ảnh, commit] | [C điền] | **Chờ B** |
+| P3 · Chốt QA mù | B → C, A | `r2_qa/qa_review.md`, `qa_overlay.html`, 4 dòng r2_qa; commit `4c89c63` (branch `hoang`) | Mã 8F87-0D1E khớp khi B chạy `qa`; overlay đúng 3 frame B1-center; [C điền phần đã kiểm] | QA đã chốt. Chờ C phân xử 4 nhận xét (2 MISSING ở 006840, BOX_GEOMETRY + ATTRIBUTE ở 056040 L7) |
 | P4 · Quyết định sửa | C → A, B | `r3_diag/`, findings r3_diag, `40_decision_log.csv` D1–D5, commit `2f6e6f5` | [C điền sau khi kiểm] | Bản nháp đã có; C cần kiểm và phân xử thêm các ca QA của B |
 | P5 · Kiểm bản sửa | A → B → C | `rework/annotations-v2.xml`, `lock2.txt` (8F87-0D1E, không đổi nhãn), `delta.md` | [B điền: kiểm lại ca giữ nhãn] | Không có ca rework; 2 ca keep_with_reason, 1 ca escalate |
-| P6 · Chốt nộp | A, B → C | `manifest.json`, commit chốt | [C điền] | Chờ P3 |
+| P6 · Chốt nộp | A, B → C | `manifest.json`, commit chốt | [C điền] | `check` exit 0 sau khi tích hợp QA của B; chờ C phân xử và chốt |
 
 ## 4. Bất đồng và phối hợp
 
