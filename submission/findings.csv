@@ -49,3 +49,6 @@ r3_diag,B2-mid,adasind_102750.jpg,M4,M_only,SPURIOUS,,,,,,,,
 r3_diag,B2-mid,adasind_102750.jpg,M5,M_only,SPURIOUS,,,,,,,,
 r3_diag,B2-mid,adasind_102750.jpg,M6,M_only,SPURIOUS,,,,,,,,
 r3_diag,B2-mid,adasind_102750.jpg,M7,M_only,SPURIOUS,,,,,,,,
+r2_qa,B4-edge,adasind_236370.jpg,L3,L_only,BOX_GEOMETRY,,P1,annotator,R02,"Overlay and image: Truck box (408,654)-(767,922) also covers the foreground rider/motorcycle; verify and separate object extents.",rework,v1.0.0,Blind QA of Hoang locked export 41EB-462A
+r2_qa,B4-edge,adasind_258420.jpg,L6-L8;L9;L11,L_only,STRUCTURE,,P1,annotator,R03,"Overlapping motorcycle/rider cluster near left edge; inspect original at zoom to determine riders versus people walking and whether instances are distinct.",escalate,v1.0.0,Unresolved from image/overlay alone; blind QA of Hoang locked export 41EB-462A
+r2_qa,B4-edge,adasind_310008.jpg,L1-L4,L_only,BOX_GEOMETRY,,P1,annotator,R02,"Four pedestrian boxes overlap at left frame edge; verify one box per visible person and boundaries against the original.",rework,v1.0.0,Blind QA observation of Hoang locked export 41EB-462A
