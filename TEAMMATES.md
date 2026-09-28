@@ -52,6 +52,6 @@ Bảng này xác định vai của nhóm. Vòng QA tự sinh trong team.json thu
 - [x] C xác nhận báo cáo đúng bản khóa, các file đầy đủ và check exit 0: Đào Xuân Tùng / `r1_craft/reference.txt`, `rework/delta.md`, `manifest.json`
 - [x] manifest.json tại commit chốt có failed_gates rỗng.
 - [x] Repo nhóm Public, ảnh và các bằng chứng mở được.
-- [ ] C đã push và gửi link repo nhóm + commit qua kênh lớp công bố. (Tùng tick sau khi gửi)
+- [x] C đã push và gửi link repo nhóm + commit qua kênh lớp công bố: Đào Xuân Tùng
 
 Chỉ đánh dấu việc đã kiểm thật. Nhóm nộp một hồ sơ chung; check không tự chấm đóng góp từng người. Giữ nguyên header/các cột enum của findings.csv; tên người được ghi trong tài liệu này hoặc phần note thích hợp.
