@@ -85,16 +85,6 @@
       "sha256": "413e23c0e0ba58881e1a9318ccfda0f9c54f016f6a8ef77c8aa15e556806354f"
     },
     {
-      "file": "r2_qa/qa_review.md",
-      "lines": 43,
-      "sha256": "c975e58dbb5c6ad61f6ef1df8023cd5dcb1456fb80f0ad9f0528de92948e7349"
-    },
-    {
-      "file": "r2_qa/qa_overlay.html",
-      "lines": 54,
-      "sha256": "03bd5581b8d647196af2e0e32c25231b961f75e986c3bb3fde7e4cee7e1dc7cd"
-    },
-    {
       "file": "r3_diag/local_quality.md",
       "lines": 49,
       "sha256": "8f65cdfd9de437885f23045c8462b3e48d4a73bf97ea9aa0dd09fdc045bb712c"
@@ -147,8 +137,8 @@
     },
     {
       "file": "findings.csv",
-      "lines": 46,
-      "sha256": "441aa75814d14ae9524e3fa226abc0da684364ece4e782ffd30cb49eae0df77d"
+      "lines": 36,
+      "sha256": "bf02044c150a308d07b982a7de2ac75382f11aa9fc0d65502cb3baef89c023ea"
     },
     {
       "file": "10_error_card.md",
@@ -187,9 +177,13 @@
     },
     {
       "file": "50_exit_ticket.md",
-      "lines": 28,
-      "sha256": "c32d191c3fc5c05ee4ba007c5f2a25c8d44c5dc4407134ad718a2d6d170998cf"
+      "lines": 30,
+      "sha256": "af2a921ce6215e5524765809a66d2fe8fe31cf33c1fa46c95ccc971f285ab55a"
     }
   ],
-  "failed_gates": []
+  "failed_gates": [
+    "findings cần ≥3 dòng vai r2_qa",
+    "Thiếu file r2_qa/qa_review.md",
+    "Thiếu file r2_qa/qa_overlay.html"
+  ]
 }

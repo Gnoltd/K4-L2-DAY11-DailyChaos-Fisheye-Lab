@@ -1,0 +1,11 @@
+round,slice,frame,object_ref,cell,what,why,severity,owner,rule_id,evidence,action,rules_version,note
+r2_qa,B1-center,adasind_006840.jpg,L11,L_only,WRONG_CLASS,,,,R04,"Box Car (301,833)-(324,896) sát rider L6; phóng to thấy túi hàng/phần xe, không thấy thân ô tô",,v1.0.0,"Cold review: nghi sai class hoặc box thừa | P4: người gán nhãn giữ nhãn, keep_with_reason (E0) kèm lý do"
+r2_qa,B1-center,adasind_006840.jpg,L9,L_only,WRONG_CLASS,,,,R04,"Xe vàng kính trước rộng (303,818)-(360,879) ở xa; minibus hay van chưa rõ",,v1.0.0,"Cold review: Bus hay Car tuỳ loại xe | P4: người gán nhãn giữ nhãn, keep_with_reason (E0) kèm lý do"
+r2_qa,B1-center,adasind_056040.jpg,L3,L_only,SPURIOUS,,,,R03,"Pedestrian (219,772)-(245,861) chồng mép phải Bike L2; ảnh mờ, có thể là người ngồi sau",,v1.0.0,"Cold review: nếu là pillion thì không box riêng | P4: reference không box, model có (LM_noR) → escalate"
+r2_qa,B1-center,adasind_056040.jpg,L7,L_only,BOX_GEOMETRY,,,,R02,"Car (0,750)-(189,980) bị rider L8 che bên trái; box kéo tới x=0",,v1.0.0,"Cold review: kiểm phần xe thật sự thấy ở x<85 | P4: được ghép LRM với reference và model Car M6 (81,751)-(192,982); giữ, không rework"
+r2_qa,B2-mid,adasind_060000.jpg,MISS-rider,L_only,MISSING,,,,R01,"Người mũ đỏ lái xe máy (80,825)-(170,1050) cao ~220 px không có box",,v1.0.0,QA bài tung: cần một Bike theo R03
+r2_qa,B2-mid,adasind_060000.jpg,ego_body,L_only,IGNORE_SCOPE,,,,R07,"Tay áo và tay lái góc dưới trái (x 0-200, y 1140-1720) không có polygon ego_body",,v1.0.0,QA bài tung
+r2_qa,B2-mid,adasind_086220.jpg,ego_body,L_only,IGNORE_SCOPE,,,,R07,"Polygon ego_body chỉ rộng 7 px (0,1161)-(7,1509), không bao tay/tay lái",,v1.0.0,QA bài tung
+r2_qa,B2-mid,adasind_102750.jpg,ego_body,L_only,IGNORE_SCOPE,,,,R07,"Tay áo và tay lái mép trái (x 0-120, y 1080-1520) không có polygon ego_body",,v1.0.0,QA bài tung
+r2_qa,B2-mid,adasind_086220.jpg,L4,L_only,WRONG_CLASS,,,,R04,"Bus (322,962)-(377,1009) là xe van/xe con trắng",,v1.0.0,QA bài tung: van chở người → Car
+r2_qa,B2-mid,adasind_102750.jpg,L5,L_only,WRONG_CLASS,,,,R04,"Car (0,848)-(87,969) thân cao, đuôi mở, dáng xe ba bánh nhìn từ sau",,v1.0.0,QA bài tung: xem lại ThreeWheeler/Truck

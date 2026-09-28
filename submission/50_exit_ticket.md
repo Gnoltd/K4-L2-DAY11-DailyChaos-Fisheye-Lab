@@ -19,10 +19,12 @@
    camera, calibration (nội + ngoại) để chiếu hai box về cùng không gian, và policy output đích; không nối chỉ vì
    cùng class hay cùng màu.
 3. Nhìn lại cả buổi: một chỗ bạn tin nhãn mình đúng nhưng reference hoặc người soát nghĩ khác (dẫn frame/`object_ref`),
-   bạn đã xử lý thế nào, và nếu làm lại slice này bạn sẽ đổi gì trong cách làm? `adasind_006840.jpg` L9: mình gán
+   bạn đã xử lý thế nào, và nếu làm lại slice này bạn sẽ đổi gì trong cách làm? `adasind_006840.jpg` L9: A (Long) gán
    **Bus** cho xe vàng (303,818)–(360,879) vì xe to hơn xe ba bánh cạnh đó, đuôi xe lớn và có phần kính ở góc trái;
-   reference gọi ThreeWheeler và bản QA cũng nghi ca này. Mình không sửa âm thầm: ghi `E0_reference_defect`,
-   `keep_with_reason` với lý do nhìn thấy trên ảnh, ghi D2 trong decision log, và khoá lại chính bản r1_craft làm
-   rework nên `delta.md` giữ số trước/sau bằng nhau. Nếu làm lại, mình sẽ ghi lý do class ngay trong self-QC lúc vẽ
-   cho các vật nhỏ ở xa, và kiểm vùng ignore trước khi vẽ nhanh — ở cùng frame, box L10 Car nằm trong vùng
-   `unreadable` của reference, và ở P2 mình đã phải sửa `ego_body` bị nối vào `lens_border` qua bốn bản nháp.
+   teaching reference gọi ThreeWheeler. Nhóm không sửa âm thầm: ghi `E0_reference_defect`, `keep_with_reason` với lý
+   do nhìn thấy trên ảnh, ghi D2 trong decision log, và khoá lại chính bản r1_craft làm rework nên `delta.md` giữ số
+   trước/sau bằng nhau; ca này chờ B (Hoàng) kiểm độc lập và C (Tùng) phân xử lần cuối. Nếu làm lại, nhóm sẽ: chốt
+   vai A/B/C ngay từ đầu để B QA mù **trước** khi mở reference (lượt này reference đã mở trước — xem
+   `TEAMMATES.md`), A ghi lý do class ngay trong self-QC cho vật nhỏ ở xa, và kiểm vùng ignore trước khi vẽ nhanh — ở
+   cùng frame, box L10 Car nằm trong vùng `unreadable` của reference; ở P2, A đã phải sửa `ego_body` bị nối vào
+   `lens_border` qua bốn bản nháp.
