@@ -1,9 +1,9 @@
 camera_id,slice_type,frames,risk,rationale
 front,normal,25,medium,"Đường thẳng, ban ngày, mật độ vừa: đo baseline box xe/người phía trước; ít frame hơn vì cảnh lặp lại nhiều trong 50.000 frame."
-front,hard,25,high,"Người/xe hai bánh cắt ngang sát mũi xe, ngược sáng, đêm/mưa, vật ở rìa vòng kính bị méo và truncated; lỗi ở đây ảnh hưởng trực tiếp cảnh báo va chạm."
+front,hard,25,high,"Người/xe hai bánh cắt ngang sát mũi xe, ngược sáng, đêm/mưa, vật ở rìa vòng kính bị méo và truncated; lỗi ở đây ảnh hưởng trực tiếp cảnh báo va chạm; model bỏ sót cả hai xe ba bánh lớn bị vòng kính cắt trong slice ADASIND."
 rear,normal,20,medium,"Lùi xe trong bãi đỗ thông thường, ít vật động: kiểm vạch ô đỗ, free_space và ego_body (cản sau) ổn định."
 rear,hard,30,high,"Lùi xe có trẻ em/vật thấp sát cản sau, vật bị ego_body che một phần, tối trong hầm; rủi ro cao nhất vì tài xế nhìn kém nhất và tốc độ phản ứng thấp."
 left,normal,20,medium,"Chạy thẳng cạnh làn/lề trái, vật chủ yếu ở mid zone; kiểm nhất quán box và ignore_region."
-left,hard,25,high,"Xe máy vượt sát bên trái, vật đi qua seam front-left/rear-left, méo rìa mạnh và truncated ở biên ảnh; dễ vừa sót vừa trùng box giữa hai camera."
+left,hard,25,high,"Xe máy vượt sát bên trái, vật đi qua seam front-left/rear-left, méo rìa mạnh và truncated ở biên ảnh; dễ vừa sót vừa trùng box giữa hai camera; slice ADASIND có 3 ca bất đồng rider/người ngồi sau (R03)."
 right,normal,20,medium,"Chạy thẳng cạnh lề phải, người đi bộ/xe đỗ ven đường mật độ thấp; baseline cho camera hướng về lề."
-right,hard,35,high,"Người đi bộ và xe hai bánh ở lề phải dày đặc (dense), che khuất lẫn nhau, vào/ra seam front-right/rear-right; đặt nhiều hard nhất vì vừa dense vừa seam (sẽ bổ sung bằng chứng sau P4)."
+right,hard,35,high,"Người đi bộ và xe hai bánh ở lề phải dày đặc (dense), che khuất lẫn nhau, vào/ra seam front-right/rear-right; đặt nhiều hard nhất vì vừa dense vừa seam: trong slice ADASIND mọi lỗi class/phạm vi của người đều ở cảnh đông vật nhỏ (006840)."
