@@ -65,8 +65,8 @@
     },
     {
       "file": "r1_craft/selfqc.md",
-      "lines": 14,
-      "sha256": "328cfbf4a04226b228f49e77092a5342f3896bcae47c592ac025089429ddee52"
+      "lines": 20,
+      "sha256": "ef0bd458889a3f71b8a37b7ab8f6a5af1f577ab7ec820fa92bdf77b6e4ff6a54"
     },
     {
       "file": "r1_craft/reference.txt",
@@ -143,7 +143,7 @@
     {
       "file": "rework/delta.md",
       "lines": 30,
-      "sha256": "63f81495407fbfee2ed29188748ff2a54de40045dcab59b7c052f6ed02e1290b"
+      "sha256": "6f82d48087a3eb3a118d0870809a5bde53411a2b5e3e0bc9c53015a0b31463d4"
     },
     {
       "file": "findings.csv",
