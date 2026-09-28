@@ -1,0 +1,9 @@
+round: r1_craft
+slice: B4-edge
+sha256: 41eb462ae0f4a9297a82afeb019cd43afd784cce35eb021467ac4211a26bd700
+code: 41EB-462A
+locked_at: 2026-09-28T18:40:06+07:00
+shapes: box=23, polygon=9
+prefill_kept: 1
+prefill_edited: 3
+new: 19

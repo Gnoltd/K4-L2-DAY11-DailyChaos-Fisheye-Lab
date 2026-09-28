@@ -1,9 +1,9 @@
 camera_id,slice_type,frames,risk,rationale
-front,normal,,TODO,TODO
-front,hard,,TODO,TODO
-rear,normal,,TODO,TODO
-rear,hard,,TODO,TODO
-left,normal,,TODO,TODO
-left,hard,,TODO,TODO
-right,normal,,TODO,TODO
-right,hard,,TODO,TODO
+front,normal,20,medium,"Cảnh thường (ban ngày, đường thẳng, ít vật) để có baseline so sánh với hard; lấy rải đều theo chuyến/ngày, tránh nhiều frame liên tiếp cùng một cảnh."
+front,hard,30,high,"Camera trước thấy người đi bộ cắt ngang, xe máy ở gần và nắng/lóa ngược sáng; vật ở rìa vòng kính bị méo mạnh (như slice edge của ADASIND); dễ nhầm vạch ô đỗ với vạch làn/vạch qua đường."
+rear,normal,18,medium,"Cảnh lùi/đỗ thông thường để có baseline; ít hơn camera khác vì cảnh lùi bình thường khá lặp lại."
+rear,hard,32,high,"Camera sau dùng nhiều nhất khi lùi vào ô đỗ: vạch ô đỗ bị che bởi xe bên cạnh, curb/vật thấp sát xe, đèn lùi ban đêm, bụi/nước bám ống kính; sai vạch ô đỗ ở đây ảnh hưởng trực tiếp tới hỗ trợ đỗ xe."
+left,normal,22,medium,"Cảnh thường bên hông để có baseline; phần lớn frame thấy mặt đường và thân xe ego nên cần mẫu để kiểm ignore ego_body/lens_border."
+left,hard,28,high,"Vùng seam với front/rear ở hai góc xe: một vật có thể xuất hiện trên hai camera; gương/thân xe ego che một phần; xe máy vượt sát bên trái nằm ở rìa ảnh, bị cắt bởi vòng kính (truncated)."
+right,normal,22,medium,"Cảnh thường bên hông để có baseline, tương tự camera trái; kiểm ignore ego_body/lens_border và vạch mép đường."
+right,hard,28,high,"Vùng seam với front/rear; người đi bộ/xe đạp sát lề phải và curb; vạch ô đỗ song song ngay dưới camera khi đỗ song song bị méo mạnh ở rìa fisheye."
