@@ -1,0 +1,27 @@
+{
+  "members": [
+    "hoang",
+    "long",
+    "tung"
+  ],
+  "assignments": {
+    "hoang": "B4-edge",
+    "long": "B1-center",
+    "tung": "B2-mid"
+  },
+  "self": "long",
+  "slice": "B1-center",
+  "degrade": [
+    "k12"
+  ],
+  "current_slice": "B1-center",
+  "support_prefill": false,
+  "support_slice": "",
+  "prefill_box_ids": [
+    "adasind_006840.jpg:1",
+    "adasind_006840.jpg:2",
+    "adasind_006840.jpg:3",
+    "adasind_006840.jpg:4",
+    "adasind_006840.jpg:5"
+  ]
+}

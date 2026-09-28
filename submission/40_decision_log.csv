@@ -1,1 +1,2 @@
 id,date,question,decision,rationale,status
+D1,2026-09-28,"lock.txt r1_craft ghi prefill_kept=23, new=0 có nghĩa là không tự vẽ box?","Không. Số này do cách import, không phản ánh công gán nhãn","Bản nháp đầu (exports/r1-draft.zip) có 26 shape source=manual và 8 source=file. Để tách ego_body khỏi lens_border mà không vẽ lại, bản đã sửa được upload lại vào CVAT bằng Upload annotations CVAT 1.1, nên CVAT đánh dấu mọi shape là source=file. Bản khoá 8F87-0D1E giống hệt bản sửa đó về box, class và attribute.",resolved
