@@ -18,7 +18,7 @@
 |---|---|---|---|---|---|
 | A · Gán nhãn | Đỗ Thành Long | 2A202602199 | long | Parking/C0/slice, self-QC, lock, rework | `submission/parking/`, `p1_calib/` (lock 1605-E959), `r1_craft/` (lock 8F87-0D1E, selfqc 9 mục), `rework/` (lock2 8F87-0D1E, delta); commit `8d79122`, `9da5adc` |
 | B · QA độc lập | Nguyễn Văn Hoàng | 2A202602176 | hoang | Review trước reference, finding QA, kiểm lại ca sửa | `submission/r2_qa/qa_review.md` + `qa_overlay.html` (QA mù bản 8F87-0D1E, 3 frame, 5 nhận xét), 4 dòng `r2_qa` trong findings; commit `4c89c63` trên branch `hoang`, tích hợp vào `main` |
-| C · Chẩn đoán & điều phối | Đào Xuân Tùng | 2A202602177 | tung | Báo cáo, phân xử, kế hoạch, tích hợp, check và nộp | [Chờ: kiểm và xác nhận `r3_diag/`, dòng `r3_diag`, `10_error_card.md`, 20/30/40/45/46/50, phân xử QA của B, `check`, commit chốt] |
+| C · Chẩn đoán & điều phối | Đào Xuân Tùng | 2A202602177 | tung | Báo cáo, phân xử, kế hoạch, tích hợp, check và nộp | Phân xử 4 nhận xét QA của B: 4 dòng `r3_diag` mới (2 rework ở 056040 L7, 1 rework thêm Pedestrian 006840, 1 escalate), decision log D6–D8, `30_escalation_ticket.md` Ticket 2, 2 screenshot; kiểm lại cùng A bản P4–P6 (`r3_diag/`, `10_error_card.md`, 20/40/45/46/50); `check`, commit chốt |
 
 Bảng này xác định vai của nhóm. Vòng QA tự sinh trong team.json thuộc quy trình nhiều hồ sơ của CLI; nhóm dùng một slice chung và quy trình A → B → C đã nêu trong hướng dẫn.
 
@@ -29,13 +29,15 @@ Bảng này xác định vai của nhóm. Vòng QA tự sinh trong team.json thu
 | P0 · Chốt môi trường và vai | C → A, B | `00_setup/mode.json` (slice B1-center), `parking/annotations.xml` (20 parking_line, 2 free_space) | [C/B điền] | Xong phần A. Vai A/B/C chốt muộn, xem mục 4 |
 | P2 · Khóa bản đầu | A → B, C | `r1_craft/annotations.xml`, `lock.txt`, slice B1-center, mã **8F87-0D1E**, commit `8d79122` | [B điền: mã khớp khi chạy `qa`] | Xong |
 | P3 · Chốt QA mù | B → C, A | `r2_qa/qa_review.md`, `qa_overlay.html`, 4 dòng r2_qa; commit `4c89c63` (branch `hoang`) | Mã 8F87-0D1E khớp khi B chạy `qa`; overlay đúng 3 frame B1-center; [C điền phần đã kiểm] | QA đã chốt. Chờ C phân xử 4 nhận xét (2 MISSING ở 006840, BOX_GEOMETRY + ATTRIBUTE ở 056040 L7) |
-| P4 · Quyết định sửa | C → A, B | `r3_diag/`, findings r3_diag, `40_decision_log.csv` D1–D5, commit `2f6e6f5` | [C điền sau khi kiểm] | Bản nháp đã có; C cần kiểm và phân xử thêm các ca QA của B |
+| P4 · Quyết định sửa | C → A, B | `r3_diag/`, findings r3_diag, `40_decision_log.csv` D1–D8, Ticket 1–2 | C (Tùng) cùng A đối chiếu từng nhận xét QA với ảnh gốc phóng to, reference R7 và model M6 | Giao A rework: thêm Pedestrian 006840 (92,838)–(106,902); 056040 L7 thu về x≈80, bỏ truncated. 1 ca escalate (D7) |
 | P5 · Kiểm bản sửa | A → B → C | `rework/annotations-v2.xml`, `lock2.txt` (8F87-0D1E, không đổi nhãn), `delta.md` | [B điền: kiểm lại ca giữ nhãn] | Không có ca rework; 2 ca keep_with_reason, 1 ca escalate |
 | P6 · Chốt nộp | A, B → C | `manifest.json`, commit chốt | [C điền] | `check` exit 0 sau khi tích hợp QA của B; chờ C phân xử và chốt |
 
 ## 4. Bất đồng và phối hợp
 
 - Một ca đã phân xử: `adasind_006840.jpg` L9 (303,818)–(360,879), R04 — A gán `Bus` (xe to hơn xe ba bánh bên cạnh, đuôi lớn, có kính góc trái), teaching reference gọi `ThreeWheeler`. Quyết định: giữ nhãn, `E0_reference_defect`, `keep_with_reason` (findings r1_craft L9+R4, r3_diag L9+M12/R4; decision log D2; `screenshots/006840_bus_vs_threewheeler_L_vs_R.png`). Chờ B kiểm độc lập và C xác nhận lần cuối.
+- Ca đã phân xử thứ hai: `adasind_056040.jpg` L7 Car, R02/R05 — A giữ box tới x=0 (cho rằng phần xe thấy tới mép ảnh); B (Hoàng) chỉ ra xe chỉ thấy từ x≈83, phần trái là rider L8. C (Tùng) đối chiếu reference R7 (80,755)–(195,990) và model M6 (81,751)–(192,982), quyết định rework: thu về x≈80, bỏ truncated (D8).
+- Ca còn mở: `adasind_006840.jpg` người cạnh xe ba bánh L3 (368,825)–(392,900) — đứng ngoài hay ngồi trong xe (Ticket 2, D7, người theo dõi: C).
 - Ca còn mở: `adasind_056040.jpg` L3 Pedestrian (219,772)–(245,861), R03 — người ngồi sau hay đứng cạnh xe máy. Người theo dõi: C. Phép kiểm tiếp: xem frame liền kề trong video ADASIND gốc (`30_escalation_ticket.md`, decision log D5, status escalated).
 - Đóng góp của A/B/C vào kế hoạch và exit ticket: bản nháp `45_sampling_plan.csv`, `45_review_plan.md`, `46_gold_set_plan.md`, `50_exit_ticket.md` được soạn trên máy chính trong lúc A làm; [C kiểm, sửa và ghi phần mình đóng góp; B bổ sung nếu có].
 - Thay đổi phân công nếu có: **Có.** Lúc đầu (khoảng 15:30–18:30 ngày 2026-09-28) nhóm làm theo mô hình mỗi người một hồ sơ trên branch riêng: `long` → B1-center, `tung` → B2-mid (khoá E89D-402C), `hoang` → B4-edge. Sau khi nhận hướng dẫn nhóm (~18:45), nhóm chuyển sang một hồ sơ chung trên slice B1-center của A. Hệ quả cần ghi rõ:

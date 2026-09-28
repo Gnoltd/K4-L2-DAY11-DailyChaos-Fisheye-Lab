@@ -147,8 +147,8 @@
     },
     {
       "file": "findings.csv",
-      "lines": 40,
-      "sha256": "d840aa1f42f25da9c0cabaf6d95defde68c2b7bb990e0ea79f6e11f7351a04fc"
+      "lines": 44,
+      "sha256": "56878da3eb23460b17534e486f006231a2ee78fc9a79c4c7bcab3c906e87f162"
     },
     {
       "file": "10_error_card.md",
@@ -162,13 +162,13 @@
     },
     {
       "file": "30_escalation_ticket.md",
-      "lines": 15,
-      "sha256": "27f9d22de883bbaabb120e272090ba56fec4d961be87288bb5b3431844c0ec11"
+      "lines": 31,
+      "sha256": "d15351157b0e9a1e1e7be07c5d5fdb73823f7a2aa711325d541cedaadf700229"
     },
     {
       "file": "40_decision_log.csv",
-      "lines": 6,
-      "sha256": "992ef82db049d6bd18816e7919934dc2ec98bd3ce28216ee2704463a27052f7b"
+      "lines": 9,
+      "sha256": "e39765c464050663ec575802747fb72440f763eb4ab169ff494175366bba0e91"
     },
     {
       "file": "45_review_plan.md",
