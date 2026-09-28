@@ -16,7 +16,7 @@
 
 | Vai | Họ và tên | MSSV | Tên định danh trong mode | Trách nhiệm | Bằng chứng đóng góp |
 |---|---|---|---|---|---|
-| A · Gán nhãn | Đỗ Thành Long | 2A202602199 | long | Parking/C0/slice, self-QC, lock, rework | `submission/parking/`, `p1_calib/` (lock 1605-E959), `r1_craft/` (lock 8F87-0D1E, selfqc 9 mục), `rework/` (lock2 8F87-0D1E, delta); commit `8d79122`, `9da5adc` |
+| A · Gán nhãn | Đỗ Thành Long | 2A202602199 | long | Parking/C0/slice, self-QC, lock, rework | `submission/parking/`, `p1_calib/` (lock 1605-E959), `r1_craft/` (lock 8F87-0D1E, selfqc 9 mục), `rework/` (lock2 7968-8D80 sau phân xử QA, delta); commit `8d79122`, `9da5adc` |
 | B · QA độc lập | Nguyễn Văn Hoàng | 2A202602176 | hoang | Review trước reference, finding QA, kiểm lại ca sửa | `submission/r2_qa/qa_review.md` + `qa_overlay.html` (QA mù bản 8F87-0D1E, 3 frame, 5 nhận xét), 4 dòng `r2_qa` trong findings; commit `4c89c63` trên branch `hoang`, tích hợp vào `main` |
 | C · Chẩn đoán & điều phối | Đào Xuân Tùng | 2A202602177 | tung | Báo cáo, phân xử, kế hoạch, tích hợp, check và nộp | Phân xử 4 nhận xét QA của B: 4 dòng `r3_diag` mới (2 rework ở 056040 L7, 1 rework thêm Pedestrian 006840, 1 escalate), decision log D6–D8, `30_escalation_ticket.md` Ticket 2, 2 screenshot; kiểm lại cùng A bản P4–P6 (`r3_diag/`, `10_error_card.md`, 20/40/45/46/50); `check`, commit chốt |
 
@@ -30,7 +30,7 @@ Bảng này xác định vai của nhóm. Vòng QA tự sinh trong team.json thu
 | P2 · Khóa bản đầu | A → B, C | `r1_craft/annotations.xml`, `lock.txt`, slice B1-center, mã **8F87-0D1E**, commit `8d79122` | [B điền: mã khớp khi chạy `qa`] | Xong |
 | P3 · Chốt QA mù | B → C, A | `r2_qa/qa_review.md`, `qa_overlay.html`, 4 dòng r2_qa; commit `4c89c63` (branch `hoang`) | Mã 8F87-0D1E khớp khi B chạy `qa`; overlay đúng 3 frame B1-center; [C điền phần đã kiểm] | QA đã chốt. Chờ C phân xử 4 nhận xét (2 MISSING ở 006840, BOX_GEOMETRY + ATTRIBUTE ở 056040 L7) |
 | P4 · Quyết định sửa | C → A, B | `r3_diag/`, findings r3_diag, `40_decision_log.csv` D1–D8, Ticket 1–2 | C (Tùng) cùng A đối chiếu từng nhận xét QA với ảnh gốc phóng to, reference R7 và model M6 | Giao A rework: thêm Pedestrian 006840 (92,838)–(106,902); 056040 L7 thu về x≈80, bỏ truncated. 1 ca escalate (D7) |
-| P5 · Kiểm bản sửa | A → B → C | `rework/annotations-v2.xml`, `lock2.txt` (8F87-0D1E, không đổi nhãn), `delta.md` | [B điền: kiểm lại ca giữ nhãn] | Không có ca rework; 2 ca keep_with_reason, 1 ca escalate |
+| P5 · Kiểm bản sửa | A → B → C | `rework/annotations-v2.xml`, `lock2.txt` (relock **7968-8D80**, lịch sử 8F87-0D1E), `delta.md` | C (Tùng) so bản export với bản khoá r1_craft: đúng 3 thay đổi (thêm Pedestrian 006840, Car 056040 x=103 + truncated=false); [B điền: kiểm lại ca đã sửa] | Xong. Spurious mid 1→2 do reference thiếu người áo trắng (xem delta.md) |
 | P6 · Chốt nộp | A, B → C | `manifest.json`, commit chốt | [C điền] | `check` exit 0 sau khi tích hợp QA của B; chờ C phân xử và chốt |
 
 ## 4. Bất đồng và phối hợp

@@ -3,24 +3,28 @@
 | zone | matched before | matched after | missing before | missing after | spurious before | spurious after |
 |---|---:|---:|---:|---:|---:|---:|
 | center | 9 | 9 | 1 | 1 | 2 | 2 |
-| mid | 7 | 7 | 0 | 0 | 1 | 1 |
+| mid | 7 | 7 | 0 | 0 | 1 | 2 |
 | edge | 3 | 3 | 0 | 0 | 0 | 0 |
 
 ## Findings action=rework
-Không có dòng `action=rework`. Bản rework là **chính bản r1_craft đã khoá** (cùng mã 8F87-0D1E), nên số trước/sau
-bằng nhau ở cả ba zone — đây là quyết định có căn cứ, không phải bỏ bước.
+- adasind_006840.jpg missing@x92-106,y838-900 MISSING: không áp dụng
+- adasind_056040.jpg L7+R7+M6 BOX_GEOMETRY: đã sửa
+- adasind_056040.jpg L7 ATTRIBUTE: đã sửa
 
-## Vì sao không sửa
+## Đọc số trước/sau
 
-Ba khác biệt với teaching reference đều nằm ở center (1 missing, 2 spurious) và đã được xem lại trên ảnh gốc:
+Bản rework `7968-8D80` (khoá lại bằng `--relock`, lịch sử bản 8F87-0D1E giữ trong `lock2.txt`) thực hiện đúng ba
+quyết định của C (Đào Xuân Tùng) sau QA của B (Nguyễn Văn Hoàng) — decision log D6, D8:
 
-- `006840` xe vàng (303,818)–(360,879) — reference gọi ThreeWheeler, mình giữ **Bus**: xe to hơn xe ba bánh bên cạnh,
-  đuôi xe lớn, có phần kính ở góc trái thân xe. `keep_with_reason`, E0, cần người soát thứ ba.
-- `006840` box Car (301,833)–(324,896) — reference không có, mình giữ **Car**: vật màu trắng khác phần màu xám phía sau
-  xe máy L6, đọc được là đầu một xe màu trắng. `keep_with_reason`, E0, cần người soát thứ ba.
-- `056040` Pedestrian (219,772)–(245,861) — reference không có, model có (M4). Chưa đủ bằng chứng người ngồi sau hay
-  người đứng cạnh → `escalate` (xem `30_escalation_ticket.md`), không sửa trước khi có phân xử.
+- `adasind_056040.jpg` L7 Car: cạnh trái thu từ x=0 về **x=103**, `truncated` true → **false**, giữ `occluded=true`.
+  Tool xác nhận "đã sửa" cho cả BOX_GEOMETRY và ATTRIBUTE. Matched mid giữ 7 vì trước và sau đều ghép được với
+  reference R7 (80,755)–(195,990); sửa này làm box bám phần nhìn thấy (R02), không đổi số đếm. Mục tiêu phân xử là
+  x≈80, A kéo về x=103 nên box hụt khoảng x 80–103 của thân xe — chấp nhận, IoU với R7 vẫn ≈0.73.
+- `adasind_006840.jpg`: **thêm** `Pedestrian` (92,832)–(109,904), `occluded=true` — người áo trắng đứng sau xe máy L1.
+  Vật này không có trong teaching reference, nên tool đếm là **spurious mid 1 → 2** và ghi "không áp dụng". Đây là
+  kết quả dự kiến: nhóm cho rằng reference thiếu vật (E0 phụ ở dòng findings `missing@x92-106`), không sửa số bằng tay.
+- Không sửa: xe vàng Bus và box Car (301,833) ở 006840 (keep_with_reason, D2–D3); 056040 L3 và người cạnh xe ba bánh
+  ở 006840 đang escalate (D5, D7).
 
-Nếu người soát thứ ba đồng ý với reference ở hai ca đầu, sửa sẽ đổi center thành matched 10, missing 0, spurious 0.
-Giới hạn: reference là teaching reference sửa tay trên 3 frame, không phải gold set; hai nguồn (mình và model) cùng
-gọi Bus không chứng minh bên nào đúng vì model không có class ThreeWheeler.
+Center giữ 9 matched / 1 missing / 2 spurious vì hai ca keep_with_reason không đổi. Giới hạn: teaching reference chưa
+phải gold; khi reference được bổ sung người áo trắng, spurious mid sẽ về 1 và matched mid thành 8.
