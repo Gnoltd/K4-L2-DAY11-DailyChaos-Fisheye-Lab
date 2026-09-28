@@ -1,0 +1,11 @@
+# Exit ticket
+
+Đọc `docs/10-svm360-reading-vi.md` trước khi trả lời câu 1–2. Các câu về zone, `why`, rework, parking và sampling
+đã nằm trong file tương ứng nên không hỏi lại ở đây.
+
+1. Một vật ở vùng seam giữa hai camera thật xuất hiện với hai box khác nhau: đó là lỗi `DUPLICATE` hay cần một quy
+   tắc riêng? Vì sao? `Không nên tính ngay là DUPLICATE. Trên từng ảnh gốc, mỗi box đều đúng cho camera đó; lỗi DUPLICATE chỉ có nghĩa khi hai box cùng nằm trong một không gian đầu ra. Cần quy tắc riêng cho seam: nêu output đích là theo từng camera (giữ cả hai box) hay hợp nhất trên BEV (một vật, một box/track), và chỉ ghép khi có timestamp đồng bộ và calibration để chiếu hai box về cùng tọa độ. Chưa có policy thì giữ box trên từng camera và escalate.`
+2. Một vật đi qua nhiều frame trên cùng camera: khi nào giữ cùng track ID, khi nào thêm keyframe hoặc trạng thái
+   Outside? Nêu bằng chứng sẽ cần trước khi nối track qua hai camera. `Giữ cùng track ID khi vẫn là cùng một vật và còn quan sát được liên tục, kể cả khi bị che ngắn. Thêm keyframe khi hình dạng/vị trí box đổi nhiều (vd. vật đi từ center ra edge bị méo mạnh, bị che một phần rồi lộ lại) để nội suy không lệch. Đặt Outside khi vật ra khỏi vòng kính/khung hình hoặc bị che hoàn toàn; khi nó quay lại mà không chắc là cùng vật thì mở track mới. Muốn nối track qua hai camera cần: timestamp đồng bộ, calibration intrinsics/extrinsics của cả hai camera, vật nằm trong vùng chồng và vị trí chiếu về BEV khớp nhau, cùng class/dáng; kèm policy ai được quyết ghép.`
+3. Nhìn lại cả buổi: một chỗ bạn tin nhãn mình đúng nhưng reference hoặc người soát nghĩ khác (dẫn frame/`object_ref`),
+   bạn đã xử lý thế nào, và nếu làm lại slice này bạn sẽ đổi gì trong cách làm? `Ở adasind_258420.jpg, box ô tô trắng L1 của mình phủ hết phần xe nhìn thấy (x≈210–275) nhưng reference R5 hẹp hơn, nên compare báo BOX_GEOMETRY rồi tách thành SPURIOUS + MISSING. Mình đối chiếu lại ảnh gốc và model (M6 cũng phủ hết xe), giữ nhãn với lý do E0 theo R02 và ghi decision log D3 thay vì sửa theo reference. Làm lại, mình sẽ zoom kỹ vùng cảnh đông trước khi vẽ để box bám sát ngay từ đầu (tránh lỗi box phình như L11), và hỏi trước cách dùng edge_zone để không lệch attribute với reference.`

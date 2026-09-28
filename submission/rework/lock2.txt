@@ -1,0 +1,9 @@
+round: rework
+slice: B4-edge
+sha256: bf96f5ceafe3afe50399a1a56abbbe2bdb154d7e2d1f1a4a0baa2a6fecadf47d
+code: BF96-F5CE
+locked_at: 2026-09-28T21:24:51+07:00
+shapes: box=23, polygon=9
+prefill_kept: 1
+prefill_edited: 3
+new: 19

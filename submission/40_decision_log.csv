@@ -1,1 +1,8 @@
 id,date,question,decision,rationale,status
+D1,2026-09-28,"C0 adasind_019560 L1: box xe ba bánh ở mép trái là Truck hay ThreeWheeler?","Theo reference: ThreeWheeler; ghi E1 cho nhãn của mình","Ảnh gốc là auto-rickshaw vàng-đen; R04 ánh xạ xe ba bánh chở người vào ThreeWheeler",closed
+D2,2026-09-28,"C0 adasind_019560 L4: vật bị che giữa hai rickshaw là Bike hay ThreeWheeler, có cần box không?","Chuyển người quản lý reference (Ticket 2)","Cao ≈91 px ≥ H=40 nhưng bị che, không đủ bằng chứng để tự quyết; reference không có box",escalated
+D3,2026-09-28,"B4-edge adasind_258420 L1 vs R5 (ô tô trắng): sửa theo reference hay giữ?","Giữ L1, ghi E0 cho reference","Xe nhìn thấy từ x≈210 tới 275; L1 và model M6 cùng phủ hết, R5 chỉ phủ nửa trái (R02)",kept
+D4,2026-09-28,"B4-edge adasind_258420 L8, L10 không có trong reference: xóa hay giữ?","Giữ cả hai, ghi E0","Người trên xe máy (≈54 px) và người cầm ô (≈53 px) thấy rõ, ≥ H=40 nên theo R01 cần box",kept
+D5,2026-09-28,"B4-edge adasind_258420 L11: sửa box hay đổi class?","Rework: thu box theo phần nhìn thấy, giữ Bike + occluded","Box cũ vẽ phình lấn sang xe máy L6 (R02); khóa lại rework mã BF96-F5CE, xem rework/delta.md",closed
+D6,2026-09-28,"Model gọi auto-rickshaw là Truck/Car/Bus ở 258420 và 310008: có sửa nhãn không?","Không sửa nhãn; escalate cho ai_team (Ticket 1)","L và R khớp nhau theo R04; lỗi lặp ở 4 xe trên 2 frame nên là lệch miền của model (E4)",escalated
+D7,2026-09-28,"adasind_310008 edge_zone khác reference ở 4 Pedestrian: lỗi ai?","Đề xuất rule R05b trong 20_guideline_patch.md (v1.1.0)","Rules v1.0.0 không định nghĩa edge_zone (E2_guideline_gap)",proposed
