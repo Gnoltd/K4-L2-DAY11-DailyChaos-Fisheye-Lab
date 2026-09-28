@@ -8,7 +8,7 @@
 - Máy giữ hồ sơ chính / người quản lý: máy của Đỗ Thành Long (CVAT local, `exports/`, `data/_ref/`); hồ sơ chung ở nhánh `main`
 - Slice chung lấy từ mode.json: **B1-center** (`adasind_006840.jpg`, `adasind_036720.jpg`, `adasind_056040.jpg`)
 - Tên định danh vai A dùng cho --self: `long` (`python3 lab11.py mode --members long,tung,hoang --self long`)
-- Kênh trao đổi nội bộ: làm trực tiếp cùng nhau trên máy chính của Long (một người sửa một file tại một thời điểm); branch cá nhân `long`, `tung`, `hoang` chỉ dùng để chuyển file
+- Kênh trao đổi nội bộ: trực tiếp trao đổi và discord; branch cá nhân `long`, `tung`, `hoang` chỉ dùng để chuyển file
 - Đại diện nộp (vai C): Đào Xuân Tùng, 2A202602177
 - Commit chốt bài: `862eb0e` — https://github.com/Gnoltd/K4-L2-DAY11-DailyChaos-Fisheye-Lab/commit/862eb0e0b8aabd6603b22f5e0d03f19234ada44a (commit sau chỉ ghi SHA này vào TEAMMATES.md)
 
